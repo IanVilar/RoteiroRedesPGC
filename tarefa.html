@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Aula Prática - Domínio de Colisão e Domínio Broadcast</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="header_wrapper">
+  <div id="header">
+    <div id="site_title">
+      <!--h1><a href="#"> <img src="images/logo-ic.png" alt="" /> <span>free css templates</span> </a></h1-->
+    </div>
+    <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet, ipsum bibendum pretium volutpat, diam magna facilisis ante.</p>-->
+  </div>
+  <!-- end of header -->
+</div>
+<!-- end of menu_wrapper -->
+<div id="menu_wrapper">
+  <div id="menu">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="#" class="current">Tarefas</a></li>
+      <li><a href="equipe.html">Equipe</a></li>
+    </ul>
+  </div>
+  <!-- end of menu -->
+</div>
+<div id="content_wrapper">
+  <div id="content">
+    
+	 <div class="content_box">
+	      <h2>Preparação do ambiente</h2>
+	      <p> Para esta aula prática será necessária a instalação de dois softwares nos equipamentos que irão atuar como hosts:
+	      <div class="cleaner_h20"></div>
+	      <ul>
+		<li><a href="https://www.wireshark.org/#download">Wireshark</a> - ferramenta de análise de protocolos de rede.</li>
+          	<li><a href="https://iperf.fr/iperf-download.php">Iperf</a> - ferramenta para geração de tráfego e medição de performance da rede.</li>
+	      </ul>
+	      <div class="cleaner_h20"></div>
+	     <div class="cleaner"></div>
+	    </div>
+	   <div class="content_box_bottom"></div>
+
+    <!--Topico 1 -->
+    <div class="content_box">
+      <h2>Topologia da rede</h2>
+	<p> Construa a topologia da rede, conectando os hosts de acordo com a figura abaixo.
+
+	<p> Defina os endereços IP para os hosts conectados conforme identificado na figura.
+      <div class="cleaner"></div>
+    </div>
+    <div class="content_box_bottom"></div>
+    <!--Topico 2-->
+    <div class="content_box">
+      <h2>Atividades</h2>
+      <p> 1. Análise de quadros Ethernet
+      <div class="cleaner_h20"></div>
+      <p>Passo 1: Inicie o Wireshark em todos os computadores da rede para capturar as mensagens transmitidas na rede. </p>
+      <div class="cleaner_h20"></div>
+      <p>Passo 2: Em um dos computadores conectados ao hub faça:
+	<ul>
+		<li> a. Envie um comando ping para um outro computador conectado ao hub.
+		<li> b. Envie um comando ping para um outro computador conectado ao switch.
+		<li> c. Envie um comando ping utilizando o endereço IP broadcast 192.168.1.255.
+	</ul>
+	<div class="cleaner_h20"></div>
+ 	<p>Abra o Wireshark nos computadores conectados a rede, e filtre por "ICMP".
+	<p class="list_01"> Responda:
+	<ul class="list_01">
+		<li> Em a e b, as mensagens de ping foram recebidas por quais computadores? </li>	
+		<li> Em a e b, qual o endereço de origem e de destino do quadro Ethernet enviado pelo computador?</li>
+		<li> Em c, qual o endereço de destino do quadro Ethernet?</li>
+		<li> Em c, as mensagens de ping foram recebidas por quais computadores?
+	</ul>
+	<div class="cleaner_h20"></div>
+      <p> 2. Acesso à tabela ARP de um switch
+      <div class="cleaner_h20"></div>
+      <p> 3. Configuração de VLAN
+     <div class="cleaner"></div>
+    </div>
+   <div class="content_box_bottom"></div>
+          <div class="cleaner"></div>
+    </div>
+  </div>
+  <!-- end of content -->
+  <div class="cleaner"></div>
+</div>
+</body>
+</html>

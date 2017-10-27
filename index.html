@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Aula Prática - Domínio de Colisão e Domínio Broadcast</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="header_wrapper">
+  <div id="header">
+    <div id="site_title">
+      <!--h1><a href="#"> <img src="images/logo-ic.png" alt="" /> <span>free css templates</span> </a></h1-->
+    </div>
+    <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet, ipsum bibendum pretium volutpat, diam magna facilisis ante.</p>-->
+  </div>
+  <!-- end of header -->
+</div>
+<!-- end of menu_wrapper -->
+<div id="menu_wrapper">
+  <div id="menu">
+    <ul>
+      <li><a href="#" class="current">Início</a></li>
+      <li><a href="tarefa.html">Tarefas</a></li>
+      <li><a href="equipe.html">Equipe</a></li>
+    </ul>
+  </div>
+  <!-- end of menu -->
+</div>
+<div id="content_wrapper">
+  <!--div id="sidebar">
+    <div class="sidebar_box">
+      <h2>Announcements</h2>
+      <div class="news_box"> <a href="#">Fusce sit amet nunc lectus, at pretium augue. Pellentesque tortor felis.</a>
+        <p class="post_info">Posted by <a href="#">Admin</a> on <span>April 30, 2048</span></p>
+      </div>
+      <div class="news_box"> <a href="#">Integer imperdiet, justo ut venenatis vehicula, magna mi placerat felis.</a>
+        <p class="post_info">Posted by <a href="#">Admin</a> on <span>April 22, 2048</span></p>
+      </div>
+      <div class="news_box"> <a href="#">Sed justo dolor, convallis at, vestibulum vitae, elementum eu, pede.</a>
+        <p class="post_info">Posted by <a href="#">Admin</a> on <span>April 14, 2048</span></p>
+      </div>
+    </div>
+    <div class="sidebar_box_bottom"></div>
+    <div class="sidebar_box">
+      <h2>Newsletter</h2>
+      <form action="#" method="get">
+        <label>Please enter your email address to subscribe our newsletter.</label>
+        <input type="text" value="" name="username" size="10" id="input_field" />
+        <input type="submit" name="login" value="Subscribe" alt="login" id="submit_btn" />
+      </form>
+      <div class="cleaner"></div>
+    </div>
+    <div class="sidebar_box_bottom"></div>
+  </div>
+   end of sidebar -->
+  <div id="content">
+    <div class="content_box">
+      <h2>Apresentação</h2>
+      <p> Nesta aula prática serão apresentados os seguintes conceitos relacionados à camada de enlace de redes de computadores:
+      <div class="cleaner_h20"></div>
+      <div class="image_fl"> <img src="images/images01.jpg" alt="" /> </div>
+      <div class="section_w250 float_r">
+        <ul class="list_01">
+	  <li>Elementos para interligação de redes </li>
+          <li>Domínio de colisão </li>
+          <li>Domínio broadcast </li>
+          <li>Endereço broadcast </li>
+          <li>Rede local virtual (VLAN) </li>
+          <li>Protocolo ARP</li>
+        </ul>
+      </div>
+      <div class="cleaner"></div>
+    </div>
+    <!--Topico 1 -->
+    <div class="content_box_bottom"></div>
+    <div class="content_box">
+      <h2>Elementos para interligação de redes</h2>
+      <div class="section_w250 float_l">
+        <h3>Repetidor</h3>
+	   <ul>
+		  <li>Interliga níveis físicos diferentes com mesmo MAC (método de controle de acesso).</li>
+		  <li>Os dispositivos ligados através de um repetidor se encontram em um mesmo domínio de colisão e de broadcast.</li>
+	   </ul>
+      </div>
+      <div class="section_w250 float_r">
+        <h3>Roteador</h3>
+        <ul>
+            <li>Permite interligar redes diferentes</li>
+            <li>Divide um dominio de broadcast em dois ou mais domínios de broadcast menores.</li>
+        </ul>   
+      </div>
+      <div class="section_w250 float_r">
+        <h3>Switch</h3>
+        <ul>
+            <li>Capaz de selecionar em que porta os frames devem ser enviados.</li>
+            <li>Divide um dominio de colisão em dois ou mais domínios de colisão menores.</li>
+            <li>Cada porta do switch corresponde a um domínio de colisão diferente.</li>
+        </ul>   
+      </div>
+      <div class="cleaner"></div>
+    </div>
+    <div class="content_box_bottom"></div>
+    <!--Topico 2-->
+    <div class="content_box">
+      <h2>Domínio de colisão</h2>
+      <p> O domínio de colisão é um segmento lógico da rede onde os pacotes transmitidos por elementos pertencentes a ele podem colidir uns com os outros.
+      <div class="cleaner_h20"></div>
+      <div class="image_fl"> <img src="images/collision-domain.png" alt="" /> </div>
+      <div class="cleaner_h20"></div>
+     <div class="cleaner"></div>
+    </div>
+   <div class="content_box_bottom"></div>
+    <!--Topico 3-->
+    <div class="content_box">
+      <h2>Domínio broadcast</h2>
+      <p>O domínio broadcast consiste em um conjunto de dispositivos que recebem qualquer pacote broadcast originário de qualquer dispositivo dentro do segmento de rede.
+        <div class="cleaner_h20"></div>
+      <div class="image_fl"> <img src="images/broadcast-domain.png" alt="" /> </div>
+      <div class="cleaner_h20"></div>
+    </div>
+   <div class="content_box_bottom"></div>
+  <!--Topico 4-->
+  <div class="content_box">
+      <h2>Endereço broadcast</h2>
+      <div class="cleaner_h20"></div>
+      <p>Um endereço de destino MAC broadcast é definido por FF:FF:FF:FF:FF:FF, e significa que o pacote deve ser enviado de um host origem para todos os outros hosts pertencentes à mesma rede.
+       <div class="cleaner_h20"></div>
+      <div class="image_fl"> <img src="images/broadcast-address.jpg" 
+      alt="" /> </div>
+       <div class="cleaner"></div>
+    </div>
+      <div class="content_box_bottom"></div>
+ <!-- Topico 5-->
+      <div class="content_box">
+      <h2>Rede Local Virtual</h2>
+      <div class="cleaner_h20"></div>
+      <ul>
+        <li>Uma VLAN (Virtual Local Area Network - Rede Local Virtual) é uma rede local que reúne um conjunto de máquinas de maneira lógica</li>
+        <li>Define um domínio broadcast para pacotes do nível de rede </li>
+        <li>Definição de LANs separadas através da especificação de um subconjunto de portas em um switch ou portas em vários switches </li>
+        <li>O switch funciona como se fossem switches separados </li>
+        <li>Para interligar diferentes VLANs é necessário um elemento a mais, o roteador. </li>
+        <li>O roteador também pode estar implementado no próprio switch (não ocupa uma porta em cada VLAN que interliga)</li>
+      </ul>
+       <div class="cleaner_h20"></div>
+       <div class="cleaner"></div>
+    </div>
+      <div class="content_box_bottom"></div>
+       <!-- Topico 6-->
+      <div class="content_box">
+      <h2>Protocolo ARP</h2>
+      <div class="cleaner_h20"></div>
+     <p>O protocolo ARP (Address Resolution Protocol) é responsável pela conversão de um endereço IP em um endereço MAC. </p>
+      <p>Assim, para fazer a correspondência entre os endereços físicos e os endereços lógicos, o protocolo ARP interroga as máquinas da rede para conhecer o seu endereço físico e depois cria uma tabela de correspondência entre os endereços lógicos e os endereços físicos numa memória secreta. 
+       <div class="cleaner_h20"></div>
+       <div class="cleaner"></div>
+    </div>
+  </div>
+  <!-- end of content -->
+  <div class="cleaner"></div>
+</div>
+</body>
+</html>
