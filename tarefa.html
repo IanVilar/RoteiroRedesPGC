@@ -54,28 +54,32 @@
     <!--Topico 2-->
     <div class="content_box">
       <h2>Atividades</h2>
+      <h3> Domínio de Colisão </h3>
       <p> 1. Análise de quadros Ethernet
       <div class="cleaner_h20"></div>
-      <p>Passo 1: Inicie o Wireshark em todos os computadores da rede para capturar as mensagens transmitidas na rede. </p>
-      <div class="cleaner_h20"></div>
-      <p>Passo 2: Em um dos computadores conectados ao hub faça:
-	<ul>
-		<li> a. Envie um comando ping para um outro computador conectado ao hub.
-		<li> b. Envie um comando ping para um outro computador conectado ao switch.
-		<li> c. Envie um comando ping utilizando o endereço IP broadcast 192.168.1.255.
-	</ul>
-	<div class="cleaner_h20"></div>
- 	<p>Abra o Wireshark nos computadores conectados a rede, e filtre por "ICMP".
+      <p>Passo 1: Inicie o Wireshark em um dos computadores para capturar os pacotes transmitidos na rede através da interface Ethernet. </p>
+      <p>Passo 2: Em um segundo computador também conectado ao hub descubra o endereço IP configurado na interface Ethernet através do comando ifconfig (Linux) ou ipconfig (Windows): MOSTRAR FIGURAS COM OS ENDEREÇOS IP DE CADA SO
+	  <p> Passo 3: Em um terceiro computador execute o comando ping com o endereço IP obtido no passo anterior.
+	  <p> Passo 4: Através do Wireshark que está sendo executado no primeiro passo, filtre os pacotes ICMP com o endereço IP de destino obtido no segundo passo.
+	  <div class="image_fl"> <img src="images/wireshark-hub.png" alt="" /> </div>
 	<p class="list_01"> Responda:
 	<ul class="list_01">
-		<li> Em a e b, as mensagens de ping foram recebidas por quais computadores? </li>	
-		<li> Em a e b, qual o endereço de origem e de destino do quadro Ethernet enviado pelo computador?</li>
-		<li> Em c, qual o endereço de destino do quadro Ethernet?</li>
-		<li> Em c, as mensagens de ping foram recebidas por quais computadores?
+		<li> O endereço IP da máquina na qual o Wireshark é executado é o mesmo endereço IP utilizado na filtragem? </li>	
+		<li> Qual a razão do Wireshark ser capaz de capturar um pacote com o endereço IP de destino utilizado na filtragem? </li>
+		<li> O que aconteceria se a máquina do Wireshark estivesse conectada a um switch e o switch conectado ao hub no qual estão conectadas as demais máquinas? </li>
 	</ul>
 	<div class="cleaner_h20"></div>
-      <p> 2. Acesso à tabela ARP de um switch
+      <p> 2. Análise de Desempenho
       <div class="cleaner_h20"></div>
+      <p> Passo 1: Escolham duas máquinas para gerar tráfego e três máquinas para receberem tráfego.
+      <p> Passo 2: Nas máquinas escolhidas para receberem tráfego, execute o software para geração de tráfego Iperf em modo servidor com o seguinte comando iperf -s -V -u -f M. Esse comando nos indica que o software vai executar em modo servidor (-s), que vai receber tráfego UDP (-u) e que a vazão vai ser indicada em MB/s (-f M). MOSTRAR FIGURA DO COMANDO EM LINUX E WINDOWS
+      <p> Passo 3: Descubra o endereço IP das máquinas nas quais o Iperf é executado em modo servidor.
+      <p> Passo 4: Nas máquinas escolhidas para gerar o tráfego, execute o Iperf em modo cliente com o seguinte comando iperf -c xxx.xxx.xxx.xxx -u -b 80M -t 20. Esse comando nos indica para gerar tráfego UDP (-u), com uma taxa de transmissão de 80 Mb/s (ou 10MB/s) (-b 80M), por um período de 20 segundos (-t 20) e para um dos três servidores (-c xxx.xxx.xxx.xxx). OBS: Dois ou mais clientes não podem escolher um mesmo servidor em comum. MOSTRAR FIGURA DO COMANDO EM LINUX E WINDOWS
+      <p class="list_01"> Responda:
+	<ul class="list_01">
+		<li> Qual foi a vazão registrada pelos servidores ao final do experimento? </li>	
+		<li> Compare a vazão registrada com a taxa de transmissão utilizada pelos cliente. A vazão chegou próxima da taxa de transmissão? Por qual razão? </li>
+	</ul>
       <p> 3. Configuração de VLAN
      <div class="cleaner"></div>
     </div>
