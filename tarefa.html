@@ -80,7 +80,20 @@
 		<li> Qual foi a vazão registrada pelos servidores ao final do experimento? </li>	
 		<li> Compare a vazão registrada com a taxa de transmissão utilizada pelos cliente. A vazão chegou próxima da taxa de transmissão? Por qual razão? </li>
 	</ul>
-      <p> 3. Configuração de VLAN
+	  <h3> Domínio de Broadcast </h3>
+	  <p> 1. Análise de quadros Ethernet
+      <div class="cleaner_h20"></div>
+      <p>Passo 1: Inicie o Wireshark em um dos computadores para capturar os pacotes transmitidos na rede através da interface Ethernet. </p>
+      <p>Passo 2: Em um segundo computador também conectado ao switch descubra o endereço IP configurado na interface Ethernet através do comando ifconfig (Linux) ou ipconfig (Windows): MOSTRAR FIGURAS COM OS ENDEREÇOS IP DE CADA SO
+	  <p> Passo 3: Em um terceiro computador execute o comando arp -n, verifique se há uma entrada com o endereço IP obtido no passo anterior e apague essa entrada com o comando sudo arp -d xxx.xxx.xxx.xxx.
+  	  <p> Passo 4: Em um terceiro computador execute o comando ping com o endereço IP obtido no segundo passo.
+	  <p> Passo 5: Através do Wireshark que está sendo executado na máquina do primeiro passo, filtre os pacotes ICMP com o endereço IP de destino obtido no segundo passo.
+	  <div class="image_fl"> <img src="images/wireshark-hub.png" alt="" /> </div>
+	  <p> Passo 6: Através do Wireshark que está sendo executado na máquina do primeiro passo, filtre os pacotes ARP com o endereço IP de destino obtido no segundo passo.
+  	  <div class="image_fl"> <img src="images/wireshark-switch.png" alt="" /> </div>
+	<p class="list_01"> Responda:
+	<ul class="list_01">
+		<li> Os pacotes ICMP do ping transmitido pela máquina no passo 4 foram exibidos pelo Wireshark? E os pacotes ARP? Explique a razão do resultado deste experimento. DICA: Verifique o endereço MAC de destino dos quadros Ethernet. </li>
      <div class="cleaner"></div>
     </div>
    <div class="content_box_bottom"></div>
