@@ -9,9 +9,6 @@
 <div id="header_wrapper">
   <div id="header">
     <div id="site_title">
-      <!--h1><a href="#"> <img src="images/logo-ic.png" alt="" /> <span>free css templates</span> </a></h1-->
-    </div>
-    <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet, ipsum bibendum pretium volutpat, diam magna facilisis ante.</p>-->
   </div>
   <!-- end of header -->
 </div>
@@ -36,23 +33,42 @@
 	      <ul>
 		<li><a href="https://www.wireshark.org/#download">Wireshark</a> - ferramenta de análise de protocolos de rede.</li>
           	<li><a href="https://iperf.fr/iperf-download.php">Iperf</a> - ferramenta para geração de tráfego e medição de performance da rede.</li>
-	      </ul>
-	      <div class="cleaner_h20"></div>
-	     <div class="cleaner"></div>
+          </ul>
 	    </div>
 	   <div class="content_box_bottom"></div>
-	   
+
+    <!--Topico 1 -->
+    <div class="content_box">
+      <h2>Topologia da rede</h2>
+	<p> Construa a topologia da rede, conectando os hosts de acordo com a figura abaixo.
+	 <div class="cleaner_h20"></div>
+      <div class="image_fl"> <img src="images/collision-domain.png" alt="" /> </div>
+      <div class="cleaner"></div>
+    </div>
+    <div class="content_box_bottom"></div>
     <!--Topico 2-->
     <div class="content_box">
       <h2>Atividades</h2>
       <h3> Domínio de Colisão </h3>
+      <div class="cleaner_h20"></div>
       <p> 1. Análise de quadros Ethernet
       <div class="cleaner_h20"></div>
       <p>Passo 1: Inicie o Wireshark em um dos computadores para capturar os pacotes transmitidos na rede através da interface Ethernet. </p>
-      <p>Passo 2: Em um segundo computador também conectado ao hub descubra o endereço IP configurado na interface Ethernet através do comando ifconfig (Linux) ou ipconfig (Windows).
-	  <p> Passo 3: Em um terceiro computador execute o comando ping com o endereço IP obtido no passo anterior.
+      <div class="cleaner_h20"></div>
+      <p>Passo 2: Em um segundo computador também conectado ao hub descubra o endereço IP configurado na interface Ethernet através do comando ifconfig (Linux) ou ipconfig (Windows):</p> 
+          No Linux:<div class="cleaner"></div>
+          <div class="image_fl"> <img src="images/ifconfig.png" alt="" /> </div>
+          <div class="cleaner"></div>
+          No Windows:<div class="cleaner"></div>
+          <div class="image_fl"> <img src="images/ipconfig.png" alt="" /> </div>
+          <div class="cleaner"></div> <div class="cleaner_h20"></div>
+        <p> Passo 3: Em um terceiro computador execute o comando ping com o endereço IP obtido no passo anterior.
+          
+            <p class="list_02" align="center">ping "IP_destino"</p>
+            <div class="cleaner_h20"></div>
 	  <p> Passo 4: Através do Wireshark que está sendo executado no primeiro passo, filtre os pacotes ICMP com o endereço IP de destino obtido no segundo passo.
 	  <div class="image_fl"> <img src="images/wireshark-hub.png" alt="" /> </div>
+    <div class="cleaner_h20"></div>
 	<p class="list_01"> Responda:
 	<ul class="list_01">
 		<li> O endereço IP da máquina na qual o Wireshark é executado é o mesmo endereço IP utilizado na filtragem? </li>	
@@ -62,34 +78,100 @@
 	<div class="cleaner_h20"></div>
       <p> 2. Análise de Desempenho
       <div class="cleaner_h20"></div>
-      <p> Passo 1: Escolham duas máquinas para gerar tráfego e três máquinas para receberem tráfego.
-      <p> Passo 2: Nas máquinas escolhidas para receberem tráfego, execute o software para geração de tráfego Iperf em modo servidor com o seguinte comando iperf -s -V -u -f M. Esse comando nos indica que o software vai executar em modo servidor (-s), que vai receber tráfego UDP (-u) e que a vazão vai ser indicada em MB/s (-f M).
+      <p> Passo 1: Escolha duas máquinas para gerar tráfego e três máquinas para receberem tráfego.
+      <div class="cleaner_h20"></div>
+      <p> Passo 2: Nas máquinas escolhidas para receberem tráfego, abra um terminal e execute o Iperf para geração de tráfego Iperf em modo servidor com o seguinte comando:
+        <p class="list_02" align="center">iperf -s -V -f M</p><div class="cleaner"></div>
+      <p> Esse comando nos indica que o software vai executar em modo servidor (-s), que vai receber tráfego UDP (-u) e que a vazão vai ser indicada em MB/s (-f M). 
+          <div class="image_fl"> <img src="images/iperf1.png" alt="" /> </div>
+          <div class="cleaner_h20"></div>
       <p> Passo 3: Descubra o endereço IP das máquinas nas quais o Iperf é executado em modo servidor.
-      <p> Passo 4: Nas máquinas escolhidas para gerar o tráfego, execute o Iperf em modo cliente com o seguinte comando iperf -c xxx.xxx.xxx.xxx -u -b 80M -t 20. Esse comando nos indica para gerar tráfego UDP (-u), com uma taxa de transmissão de 80 Mb/s (ou 10MB/s) (-b 80M), por um período de 20 segundos (-t 20) e para um dos três servidores (-c xxx.xxx.xxx.xxx). OBS: Dois ou mais clientes não podem escolher um mesmo servidor em comum. MOSTRAR FIGURA DO COMANDO EM LINUX E WINDOWS
+          <div class="cleaner_h20"></div>
+      <p> Passo 4: Nas máquinas escolhidas para gerar o tráfego, abra um terminal e execute o Iperf em modo cliente com o seguinte comando:
+        <p class="list_02" align="center"> iperf -c xxx.xxx.xxx.xxx -u -b 80M -t 20 </p>
+        <p>Esse comando nos indica para gerar tráfego UDP (-u), com uma taxa de transmissão de 80 Mb/s (ou 10MB/s) (-b 80M), por um período de 20 segundos (-t 20) e para um dos três servidores (-c xxx.xxx.xxx.xxx). OBS: Dois ou mais clientes não podem escolher um mesmo servidor em comum.  </p>
+         <div class="image_fl"> <img src="images/iperf2.png" alt="" /> </div>
+    <div class="cleaner_h20"></div>
       <p class="list_01"> Responda:
 	<ul class="list_01">
 		<li> Qual foi a vazão registrada pelos servidores ao final do experimento? </li>	
 		<li> Compare a vazão registrada com a taxa de transmissão utilizada pelos cliente. A vazão chegou próxima da taxa de transmissão? Por qual razão? </li>
 	</ul>
+      <div class="cleaner_h20"></div>
+      <div class="cleaner_h20"></div>
 	  <h3> Domínio de Broadcast </h3>
+        <div class="cleaner_h20"></div>
 	  <p> 1. Análise de quadros Ethernet
       <div class="cleaner_h20"></div>
       <p>Passo 1: Inicie o Wireshark em um dos computadores para capturar os pacotes transmitidos na rede através da interface Ethernet. </p>
-      <p>Passo 2: Em um segundo computador também conectado ao switch descubra o endereço IP configurado na interface Ethernet através do comando ifconfig (Linux) ou ipconfig (Windows): MOSTRAR FIGURAS COM OS ENDEREÇOS IP DE CADA SO
-	  <p> Passo 3: Em um terceiro computador execute o comando arp -n, verifique se há uma entrada com o endereço IP obtido no passo anterior e apague essa entrada com o comando sudo arp -d xxx.xxx.xxx.xxx.
-  	  <p> Passo 4: Em um terceiro computador execute o comando ping com o endereço IP obtido no segundo passo.
+       <div class="cleaner_h20"></div>
+      <p>Passo 2: Em um segundo computador também conectado ao switch descubra o endereço IP configurado na interface Ethernet através do comando ifconfig (Linux) ou ipconfig (Windows): 
+          <div class="cleaner"></div>
+        No Linux:<div class="cleaner"></div>
+          <div class="image_fl"> <img src="images/ifconfig.png" alt="" /> </div>
+          <div class="cleaner"></div>
+          No Windows:<div class="cleaner"></div>
+          <div class="image_fl"> <img src="images/ipconfig.png" alt="" /> </div>
+          <div class="cleaner"></div> <div class="cleaner_h20"></div>
+	  <p> Passo 3: Em um terceiro computador execute o comando:
+          <p class="list_02" align="center"> No Linux: arp -n </p>
+          <p class="list_02" align="center"> No Windows: arp -a </p>
+        <p> Verifique se há uma entrada com o endereço IP obtido no passo anterior e apague essa entrada com o comando:
+           <p class="list_02" align="center"> arp -d xxx.xxx.xxx.xxx. </p>
+        <p>Obs: É necessário ser superusuário para executar este comando</p>
+  	  <div class="cleaner_h20"></div>
+      <p> Passo 4: Em um terceiro computador execute o comando ping com o endereço IP obtido no segundo passo.
+      <div class="cleaner_h20"></div>
 	  <p> Passo 5: Através do Wireshark que está sendo executado na máquina do primeiro passo, filtre os pacotes ICMP com o endereço IP de destino obtido no segundo passo.
 	  <div class="image_fl"> <img src="images/wireshark-hub.png" alt="" /> </div>
+    <div class="cleaner_h20"></div>
 	  <p> Passo 6: Através do Wireshark que está sendo executado na máquina do primeiro passo, filtre os pacotes ARP com o endereço IP de destino obtido no segundo passo.
   	  <div class="image_fl"> <img src="images/wireshark-switch.png" alt="" /> </div>
+        <div class="cleaner_h20"></div>
 	<p class="list_01"> Responda:
 	<ul class="list_01">
 		<li> Os pacotes ICMP do ping transmitido pela máquina no passo 4 foram exibidos pelo Wireshark? E os pacotes ARP? Explique a razão do resultado deste experimento. DICA: Verifique o endereço MAC de destino dos quadros Ethernet. </li>
      <div class="cleaner"></div>
     </div>
-   <div class="content_box_bottom"></div>
-          <div class="cleaner"></div>
     </div>
+  <div class="cleaner_h20"></div>
+    <h3> VLAN</h3>
+    <div class="cleaner_h20"></div>
+  <p> 1. Configuração de VLANs
+      <div class="cleaner_h20"></div>
+      <p> Para a criação de VLANs será utilizada a interface gráfica fornecida pelo fabricante do switch. Nesta prática, o switch utilizado foi o TP-Link TL-SG108E V2.0 (<a href="http://www.tp-link.com.br/download/TL-SG108E_V2.html">Download</a>)</p>
+      <p> Passo 1: Ao iniciar o software do fabricante, irá aparecer uma lista de switches. Selecione o switch com o endereço MAC impresso no equipamento. E clique no ícone de configuração, conforme indicado na figura abaixo.</p>
+      <div class="image_fl"> <img src="images/switch3.png" alt="" /> </div>
+       <div class="cleaner_h20"></div>
+      <p> Passo 2: Na tela de configuração, sete o campo DHCP Setting como "Enable". Preecha os campos User Name e Password com "admin", e clique em Apply. </p> 
+      <div class="image_fl"> <img src="images/switch4.png" alt="" /> </div>
+       <div class="cleaner_h20"></div>
+      <p> Passo 3: Selecione o ícone de login correspondente ao switch que será configurado para criação das VLANs, e faça o login com usuário "admin" e senha "admin" </p>
+      <div class="image_fl"> <img src="images/switch1.png" alt="" /> </div>
+       <div class="cleaner_h20"></div>
+      <p> Passo 4: Para a criação das VLANs selecione a aba VLAN na tela que irá aparecer</p>
+      <div class="image_fl"> <img src="images/switch5.png" alt="" /> </div>
+       <div class="cleaner_h20"></div>
+      <p> Passo 5: Nesta prática, cada VLAN será caracterizada por um conjunto de portas do switch. Então, no menu lateral esquerdo, selecione a opção Port Based VLAN.</p> 
+      <div class="image_fl"> <img src="images/switch6.png" alt="" /> </div>
+       <div class="cleaner_h20"></div>
+      <p> Passo 6: Crie 2 VLANs: VLAN 2 (composta por apenas um host), e VLAN 3 (composta pelos hosts restantes) </p>
+      <p> Para criar a VLAN, basta clicar nos números das portas que irão participar da VLAN, e depois clicar em Apply. 
+      <p>    Por exemplo: VLAN 2, contendo apenas a porta 4.</p> 
+      <div class="image_fl"> <img src="images/switch7.png" alt="" /> </div>
+      <p> VLAN 3, contendo as portas 5 e 8. </p>
+      <div class="image_fl"> <img src="images/switch8.png" alt="" /> </div>
+     <div class="cleaner_h20"></div>
+      <p> Passo 7: Na máquina pertencente à VLAN 2, execute o comando ping, com o endereço ip de uma das máquinas pertencentes à VLAN 3.</p>
+       <p class="list_02" align="center"> ping xxx.xxx.xxx.xxx </p>
+       <div class="cleaner_h20"></div>
+      <p> Passo 8: Em uma das máquinas pertencentes à VLAN 3, execute o comando ping, com o endereço ip da outra máquinas que também está na VLAN 3.</p>
+      <p class="list_02" align="center"> ping xxx.xxx.xxx.xxx </p>
+      <p class="list_01"> Responda:
+	   <ul class="list_01">
+		  <li> Dentre os pacotes ICMP do ping transmitidos pela máquina no passo 7, algum foi recebido pelo destino? E no passo 8? </li>
+          <li> O que podemos observar com este experimento? </li>
+       <div class="cleaner"></div>      
   </div>
   <!-- end of content -->
   <div class="cleaner"></div>
