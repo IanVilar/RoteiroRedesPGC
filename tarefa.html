@@ -41,16 +41,7 @@
 	     <div class="cleaner"></div>
 	    </div>
 	   <div class="content_box_bottom"></div>
-
-    <!--Topico 1 -->
-    <div class="content_box">
-      <h2>Topologia da rede</h2>
-	<p> Construa a topologia da rede, conectando os hosts de acordo com a figura abaixo.
-
-	<p> Defina os endereços IP para os hosts conectados conforme identificado na figura.
-      <div class="cleaner"></div>
-    </div>
-    <div class="content_box_bottom"></div>
+	   
     <!--Topico 2-->
     <div class="content_box">
       <h2>Atividades</h2>
@@ -58,7 +49,7 @@
       <p> 1. Análise de quadros Ethernet
       <div class="cleaner_h20"></div>
       <p>Passo 1: Inicie o Wireshark em um dos computadores para capturar os pacotes transmitidos na rede através da interface Ethernet. </p>
-      <p>Passo 2: Em um segundo computador também conectado ao hub descubra o endereço IP configurado na interface Ethernet através do comando ifconfig (Linux) ou ipconfig (Windows): MOSTRAR FIGURAS COM OS ENDEREÇOS IP DE CADA SO
+      <p>Passo 2: Em um segundo computador também conectado ao hub descubra o endereço IP configurado na interface Ethernet através do comando ifconfig (Linux) ou ipconfig (Windows).
 	  <p> Passo 3: Em um terceiro computador execute o comando ping com o endereço IP obtido no passo anterior.
 	  <p> Passo 4: Através do Wireshark que está sendo executado no primeiro passo, filtre os pacotes ICMP com o endereço IP de destino obtido no segundo passo.
 	  <div class="image_fl"> <img src="images/wireshark-hub.png" alt="" /> </div>
@@ -72,7 +63,7 @@
       <p> 2. Análise de Desempenho
       <div class="cleaner_h20"></div>
       <p> Passo 1: Escolham duas máquinas para gerar tráfego e três máquinas para receberem tráfego.
-      <p> Passo 2: Nas máquinas escolhidas para receberem tráfego, execute o software para geração de tráfego Iperf em modo servidor com o seguinte comando iperf -s -V -u -f M. Esse comando nos indica que o software vai executar em modo servidor (-s), que vai receber tráfego UDP (-u) e que a vazão vai ser indicada em MB/s (-f M). MOSTRAR FIGURA DO COMANDO EM LINUX E WINDOWS
+      <p> Passo 2: Nas máquinas escolhidas para receberem tráfego, execute o software para geração de tráfego Iperf em modo servidor com o seguinte comando iperf -s -V -u -f M. Esse comando nos indica que o software vai executar em modo servidor (-s), que vai receber tráfego UDP (-u) e que a vazão vai ser indicada em MB/s (-f M).
       <p> Passo 3: Descubra o endereço IP das máquinas nas quais o Iperf é executado em modo servidor.
       <p> Passo 4: Nas máquinas escolhidas para gerar o tráfego, execute o Iperf em modo cliente com o seguinte comando iperf -c xxx.xxx.xxx.xxx -u -b 80M -t 20. Esse comando nos indica para gerar tráfego UDP (-u), com uma taxa de transmissão de 80 Mb/s (ou 10MB/s) (-b 80M), por um período de 20 segundos (-t 20) e para um dos três servidores (-c xxx.xxx.xxx.xxx). OBS: Dois ou mais clientes não podem escolher um mesmo servidor em comum. MOSTRAR FIGURA DO COMANDO EM LINUX E WINDOWS
       <p class="list_01"> Responda:
