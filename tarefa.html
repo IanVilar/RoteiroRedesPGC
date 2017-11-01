@@ -171,6 +171,35 @@
 	   <ul class="list_01">
 		  <li> Dentre os pacotes ICMP do ping transmitidos pela máquina no passo 7, algum foi recebido pelo destino? E no passo 8? </li>
           <li> O que podemos observar com este experimento? </li>
+       </ul>
+   <div class="cleaner_h20"></div>
+   <h3> Quadros IEEE 802.11 </h3>
+    <div class="cleaner_h20"></div>
+  <p> 1. Exemplo de quadro Beacon </p>
+      <div class="cleaner_h20"></div>
+      <p> Passo 1: Esse experimento deve ser realizado no sistema operacional Linux utilizando o Wireshark e o pacote aircrack-ng (sudo apt-get install aircrack-ng).
+      <p> Passo 2: Execute o comando sudo airmon-ng start wlan0 para que uma interface virtual chamada mon0 seja criada e a placa de rede sem fio possa capturar quadros de controle IEEE 802.11 em modo monitor.
+      <p> Passo 3: Para capturar os quadros de controle através do Wireshark, basta iniciar a captura utilizando a interface mon0, como mostra a figura abaixo.
+      <div class="image_fl" align="center"> <img src="images/wireshark-interface-monitor.png" alt="" /> </div>
+      <div class="cleaner_h20"></div>      
+      <p> Um dos quadros mais comuns que aparece durante a captura é o quadro de Beacon:
+      <div class="cleaner_h20"></div>      
+      <div class="image_fl" align="center"> <img src="images/beacon1.png" alt="" /> <img src="images/beacon2.png" alt="" /> </div>
+      <div class="cleaner_h20"></div>      
+      <p class="list_01"> Detalhes sobre o quadro exemplificado:
+	   <ul class="list_01">
+		  <li> O quadro de beacon é identificado pelo subtipo 8 </li>
+          <li> Ambos os endereços de destino do cabeçalho são para o endereço MAC broadcast, visto que beacon é utilizado para anunciar a existência do AP </li>
+          <li> Ambos os endereços de origem do cabeçalho são para o endereço MAC do AP que está anunciando a sua rede, assim como o endereço presente no campo BSS Id. </li>        
+          <li> O quadro de beacon, além das informações de cabeçalho, carrega informações de configuração do AP no campo de dados: </li>
+          <li> O Service Set Identifier (SSID) identifica o nome no qual as estações devem se associar para estar na rede do AP </li>
+          <li> As taxas de transmissão disponíveis pelas estações associadas </li>
+          <li> O canal no qual o AP está escutando as transmissões das estações associadas </li>
+          <li> A informação de Extended Rate Phy (ERP) indica se há estações associadas que necessitam de suporte legado. Isso ocorre em virtude de diferentes implementações da camada física possuírem diferentes tempos de SIFS para a transmissão dos quadros de controle.
+	      <div class="cleaner_h20"></div>            
+          <div class="image_fl" align="center"> <img src="images/sifs.png" alt="" /> </div>
+          <div class="cleaner_h20"></div>  
+       </ul>
        <div class="cleaner"></div>      
   </div>
   <!-- end of content -->
